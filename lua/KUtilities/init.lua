@@ -5,7 +5,11 @@ local M = {}
 M.get_color = function(highlights, attributes)
 	assert(type(highlights) == "string" or type(highlights) == "table")
 	assert(type(attributes) == "string" or type(attributes) == "table")
-	print("Working Fine")
+
+	-- Converting into a table if hightlights is a singular string
+	local hls = type(highlights) == "string" and { highlights } or highlights
+
+	return hls
 end
 
 return M
