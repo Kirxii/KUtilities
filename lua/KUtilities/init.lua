@@ -5,9 +5,9 @@ M.read_file = function(directory)
 	local lines = io.lines(directory)
 
 	for line in lines do
-		content = content + line
+		content = content .. line
 		if line ~= lines[#lines] then
-			content = content + "\n"
+			content = content .. "\n"
 		end
 	end
 
