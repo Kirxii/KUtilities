@@ -1,5 +1,19 @@
 local M = {}
 
+M.read_file = function(directory)
+	local content = ""
+	local lines = io.lines(directory)
+
+	for line in lines do
+		content = content + line
+		if line ~= lines[#lines] then
+			content = content + "\n"
+		end
+	end
+
+	return content
+end
+
 ---@param highlights string|string[]
 ---@param attributes string|string[]
 M.get_color = function(highlights, attributes)
