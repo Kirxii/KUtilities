@@ -5,11 +5,9 @@ M.read_file = function(directory)
 	local lines = io.lines(directory)
 
 	for line in lines do
-		content = content .. line
-		if line ~= lines[#lines] then
-			content = content .. "\n"
-		end
+		content = content .. line .. "\n"
 	end
+	string.gsub(content, "\n+$", "")
 
 	return content
 end
